@@ -14,22 +14,23 @@ var numericCharacters = [
 var specialCharacters = ['@','%','+','\\','/',"'",'!','#','$','^','?',':',',','(',')','{','}','[',']','~','-','_','.',
 ];
 
+alert("Welcome to my Password Generator! Click the red button to get started!");
 
-
-
-
-
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
+function prompts() {
+  return confirm("Would you like to have Numbers in your password?");
 }
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+// // // Assignment Code
+// var generateBtn = document.querySelector("#generate");
+
+// // // Write password to the #password input
+// function writePassword() {
+//   var password = generatePassword();
+//   var passwordText = document.querySelector("#password");
+
+//   passwordText.value = password;
+
+// // }
+
+// // // Add event listener to generate button
+// generateBtn.addEventListener("click", writePassword)};
