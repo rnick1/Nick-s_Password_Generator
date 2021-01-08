@@ -16,9 +16,27 @@ var specialCharacters = ['@','%','+','\\','/',"'",'!','#','$','^','?',':',',','(
 
 alert("Welcome to my Password Generator! Click the red button to get started!");
 
-function prompts() {
-  return confirm("Would you like to have Numbers in your password?");
+function promptNumber() {
+  var userResponse = confirm("Would you like to have Numbers in your password?");
 }
+
+function promptSpecialCharacters() {
+  var userResponse = confirm("Would you like to have Special Characters in your password?");
+}
+
+function promptLowerCase() {
+  var userResponse = confirm("Would you like to have Lowercase Characters in your password?");
+}
+
+function promptUpperCase() {
+  var userResponse = confirm("Would you like to have Uppercase Characters in your password?");
+}
+
+// if(promptNumber = true) {
+//   return alert("Great! I'll add numbers to your password!");}
+// else(promptNumber - false); {
+//   return alert("Okay. I won't add any numbers this time.");
+// }
 
 // // // Assignment Code
 // var generateBtn = document.querySelector("#generate");
