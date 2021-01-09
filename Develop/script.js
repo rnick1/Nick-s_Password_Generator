@@ -46,25 +46,6 @@ alert("Welcome to my Password Generator!");
 
 var promptLength = prompt("How many characters would you like your password to have? Note: your password must have 8-128 characters.");
 
-
-function getPasswordOptions() {
-  var length = parseInt(prompt('How many characters would you like your password to contain?'));
-}
-
-if (isNaN(promptlength) === true) {
-   alert('Password length must be provided as a number.');
-}
-
-if (promptlength < 8 ) {
-     alert('Password length must be at least 8 characters.');
-}
-
-if (promptlength > 128) {
-     alert('Password length must be less than 128 characters');
-}
-
-
-
 var promptNumber = confirm("Would you like to have Numbers in your password?");
 
 var promptSpecialCharacters = confirm("Would you like to have Special Characters in your password?");
