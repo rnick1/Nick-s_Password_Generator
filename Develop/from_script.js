@@ -1,27 +1,28 @@
+// var lowerCase = [
+//   "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"
+// ]
+
+// var upperCase = [
+//   "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"
+// ]
+
+// var numericCharacters = [
+
+// "1", "2", "3", "4", "5", "6", "7", "8", "9"
+// ]
+
+// var specialCharacters = ['@','%','+','\\','/',"'",'!','#','$','^','?',':',',','(',')','{','}','[',']','~','-','_','.',
+// ];
+
+
+// Messages to user to gather information.
 alert("Welcome to my Password Generator!");
 
-var passwordLength = parseInt(prompt("How many characters would you like your password to have? Note: your password must have 8-128 characters."));
+var passwordLength = prompt("How many characters would you like your password to have? Note: your password must have 8-128 characters.");
+
+// For my sanity...wanted to make sure that this worked...
   console.log(passwordLength);
 
-if(isNaN(passwordLength) === true) {
-  alert("Password length must be expressed as numeric characters.");
-  var passwordLength = parseInt(prompt("How many characters would you like your password to have? Note: your password must have 8-128 characters."));
-  console.log(passwordLength);
-}
-
-if (passwordLength < 8) {
-  alert("Password length must be between 8 and 129 characters.")
-  var passwordLength = parseInt(prompt("How many characters would you like your password to have? Note: your password must have 8-128 characters."));
-  console.log(passwordLength);
-}
-
-if (passwordLength > 128) {
-  alert("Password length must be between 8 and 129 characters.")
-  var passwordLength = parseInt(prompt("How many characters would you like your password to have? Note: your password must have 8-128 characters."));
-  console.log(passwordLength);
-}
-
-function getPasswordOptions() {
 
 var promptNumber = confirm("Would you like to have Numbers in your password?");
 
@@ -29,21 +30,10 @@ var promptSpecialCharacters = confirm("Would you like to have Special Characters
   
 var promptLowerCase = confirm("Would you like to have Lower Case Letteres in your password?");
   
-var promptUpperCase = confirm("Would you like to have Upper Case Letters in your password?");
-
-if (!promptNumber && !promptSpecialCharacters && !promptLowerCase && !promptUpperCase) {
-  alert("Please select at least one character type.");
-  return getPasswordOptions;
-  // var promptNumber = confirm("Would you like to have Numbers in your password?");
-  // var promptSpecialCharacters = confirm("Would you like to have Special Characters in your password?");
-  // var promptLowerCase = confirm("Would you like to have Lower Case Letteres in your password?");
-  // var promptUpperCase = confirm("Would you like to have Upper Case Letters in your password?");
-};
-};
-
-getPasswordOptions();
+var promptUpperCase = confirm("Would you like to have Upper Case Letters in your password?")
 
 
+// Functions that gather random parts of the password.
 function getRandomLower() {
   return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
 }
@@ -78,17 +68,23 @@ for(var i = 0; i < passwordLength; i++) {
     };
     console.log(getPasswordSection());
     
+    
     console.log(i);
   };
 
   getPasswordSection();
 
+//   function getPasswordSection() {
+//     for (var i=0; i < passwordLength; i++) {
+//     return(getRandomNumber() + getRandomSpecial() + getRandomUpper() + getRandomLower());
+// }};
+// console.log(getPasswordSection());
 
 
 
 
 
-
+// Function that takes one item from each function above and puts it into an array.
 
 // function getPasswordSection() {
 //   var completePassword = '';
