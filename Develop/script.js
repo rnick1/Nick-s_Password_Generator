@@ -73,137 +73,49 @@ function getRandom(arr) {
   return randElement;
 }
 
+var options = getPasswordOptions;
+var result = [''];
+var possibleCharacters = [''];
+var guaranteedCharacters = [''];
+
 function generatePassword() {
-  var options = getPasswordOptions;
-  var result = [''];
-  var possibleCharacters = [''];
-  var guaranteedCharacters = [''];
-}
 
 if (getPasswordOptions.Numbers) {
-  possibleCharacters = possibleCharacters.concat(Numbers);
-  guaranteedCharacters.push(getRandom(Numbers));
-}
+  possibleCharacters = possibleCharacters.concat(getPasswordOptions.Numbers);
+  guaranteedCharacters.push(getRandom(getPasswordOptions.Numbers))};
 
 if (getPasswordOptions.Special) {
-  possibleCharacters = possibleCharacters.concat(Special);
-  guaranteedCharacters.push(getRandom(Special));
-
-}
+  possibleCharacters = possibleCharacters.concat(getPasswordOptions.Special);
+  guaranteedCharacters.push(getRandom(getPasswordOptions.Special))};
 
 if (getPasswordOptions.Lowercase) {
-  possibleCharacters = possibleCharacters.concat(Lowercase);
-  guaranteedCharacters.push(getRandom(Lower));
-}
+  possibleCharacters = possibleCharacters.concat(getPasswordOptions.Lowercase);
+  guaranteedCharacters.push(getRandom(getPasswordOptions.Lowercase))};
 
 if (getPasswordOptions.Uppercase) {
-  possibleCharacters = possibleCharacters.concat(Uppercase);
-  guaranteedCharacters.push(getRandom(Uppercase));
+  possibleCharacters = possibleCharacters.concat(getPasswordOptions.Uppercase);
+  guaranteedCharacters.push(getRandom(getPasswordOptions.Uppercase))};
+};
+
+for (var i = 0; i < options.length; i++) {
+  var possibleCharacters = getrandom(possibleCharacters);
+
+  result.push(possibleCharacters);
 }
 
+for (var i = 0; i < guaranteedCharacters.length; i++) {
+  result[i] = guaranteedCharacters[i];
+}
 
+var generateBtn = document.querySelector('#generate');
 
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector('#password');
+  passwordText = password;
+}
 
-console.log(possibleCharacters);
-console.log(guaranteedCharacters);
-
-generatePassword();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function getRandomLower() {
-//   return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
-// }
-// console.log(getRandomLower());
-
-// function getRandomUpper() {
-//   return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
-// }
-// console.log(getRandomUpper());
-
-// function getRandomNumber() {
-//   return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
-// }
-// console.log(getRandomNumber());
-
-// function getRandomSpecial() {
-//   var special = ['@','%','+','\\','/',"'",'!','#','$','^','?',':',',','(',')','{','}','[',']','~','-','_','.',];
-//   return special [Math.floor(Math.random() * special.length)];
-// }
-// console.log(getRandomSpecial());
-
-// var allFunctions = {
-//   lower: getRandomLower,
-//   upper: getRandomUpper,
-//   number: getRandomNumber,
-//   special: getRandomSpecial
-// }
-
-// for(var i = 0; i < passwordLength; i++) {
-//     function getPasswordSection() {
-//       return (getRandomNumber() + getRandomSpecial() + getRandomUpper() + getRandomLower());
-//     };
-//     console.log(getPasswordSection());
-    
-//     console.log(i);
-//   };
-
-//   getPasswordSection();
-
-
-
-
-
-
-
-
-// function getPasswordSection() {
-//   var completePassword = '';
-// for(i = 0; i < parseInt(promptLength);i++) {
-//   if (promptNumber) {
-//     completePassword += getRandomNumber
-//   }
-//   if (promptNumber) {
-//     completePassword += getRandomNumber
-//   }
-//   if (promptNumber) {
-//     completePassword += getRandomNumber
-//   }
-//   if (promptNumber) {
-//     completePassword += getRandomNumber
-// }
-
-//   return completePassword;
-// }
-// console.log(getPasswordSection());
-
-// for (var i = 0; i < 8; i++) getPasswordSection(i);
-// console.log(getPasswordSection(i));
-
-
-
-
-
-
+document.getElementById("generate").addEventListener("click", password)
 
 
 // // // Assignment Code
