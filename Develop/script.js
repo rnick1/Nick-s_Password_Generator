@@ -18,11 +18,11 @@
 // Messages to user to gather information.
 alert("Welcome to my Password Generator!");
 
-var promptLength = prompt("How many characters would you like your password to have? Note: your password must have 8-128 characters.");
+var passwordLength = prompt("How many characters would you like your password to have? Note: your password must have 8-128 characters.");
 
-if(promptLength) {
-  console.log(promptLength);
-}
+// For my sanity...wanted to make sure that this worked...
+  console.log(passwordLength);
+
 
 var promptNumber = confirm("Would you like to have Numbers in your password?");
 
@@ -61,6 +61,20 @@ var allFunctions = {
   number: getRandomNumber,
   special: getRandomSpecial
 }
+
+for (var i=0; i < passwordLength; i++) {
+  var password = (getRandomNumber() + getRandomSpecial() + getRandomUpper() + getRandomLower());
+} console.log(password);
+
+//   function getPasswordSection() {
+//     for (var i=0; i < passwordLength; i++) {
+//     return(getRandomNumber() + getRandomSpecial() + getRandomUpper() + getRandomLower());
+// }};
+// console.log(getPasswordSection());
+
+
+
+
 
 // Function that takes one item from each function above and puts it into an array.
 
