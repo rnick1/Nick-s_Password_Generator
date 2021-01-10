@@ -58,7 +58,12 @@ var getPasswordOptions = {
   Uppercase: promptUpperCase
 };
 
+console.log(getPasswordOptions.Length);
 console.log(getPasswordOptions.Numbers);
+console.log(getPasswordOptions.Special);
+console.log(getPasswordOptions.Lowercase);
+console.log(getPasswordOptions.Uppercase);
+
 
 
 function getRandom(arr) {
@@ -68,23 +73,41 @@ function getRandom(arr) {
   return randElement;
 }
 
-// function generatePassword() {
+function generatePassword() {
   var options = getPasswordOptions;
-  var result = [];
-  var possibleCharacters = [];
-  var guaranteedCharacters = [];
-// }
-
-
-
-
-if(getPasswordOptions.passwordLength) {
-  possibleCharacters = possibleCharacters.concat(passwordLength)
-  guaranteedCharacters.push(getRandom(specialCharacters));
+  var result = [''];
+  var possibleCharacters = [''];
+  var guaranteedCharacters = [''];
 }
+
+if (getPasswordOptions.Numbers) {
+  possibleCharacters = possibleCharacters.concat(Numbers);
+  guaranteedCharacters.push(getRandom(Numbers));
+}
+
+if (getPasswordOptions.Special) {
+  possibleCharacters = possibleCharacters.concat(Special);
+  guaranteedCharacters.push(getRandom(Special));
+
+}
+
+if (getPasswordOptions.Lowercase) {
+  possibleCharacters = possibleCharacters.concat(Lowercase);
+  guaranteedCharacters.push(getRandom(Lower));
+}
+
+if (getPasswordOptions.Uppercase) {
+  possibleCharacters = possibleCharacters.concat(Uppercase);
+  guaranteedCharacters.push(getRandom(Uppercase));
+}
+
+
+
 
 console.log(possibleCharacters);
 console.log(guaranteedCharacters);
+
+generatePassword();
 
 
 
