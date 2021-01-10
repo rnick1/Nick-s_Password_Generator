@@ -13,9 +13,16 @@
 
 // var specialCharacters = ['@','%','+','\\','/',"'",'!','#','$','^','?',':',',','(',')','{','}','[',']','~','-','_','.',
 // ];
+
+
+// Messages to user to gather information.
 alert("Welcome to my Password Generator!");
 
 var promptLength = prompt("How many characters would you like your password to have? Note: your password must have 8-128 characters.");
+
+if(promptLength) {
+  console.log(promptLength);
+}
 
 var promptNumber = confirm("Would you like to have Numbers in your password?");
 
@@ -26,13 +33,7 @@ var promptLowerCase = confirm("Would you like to have Lower Case Letteres in you
 var promptUpperCase = confirm("Would you like to have Upper Case Letters in your password?")
 
 
-// for (var i = 0; i = 7; i++){
-
-// var randomNumber = numericCharacters[Math.floor(Math.random() * numericCharacters.length)];
-// console.log(randomNumber)
-// }
-
-
+// Functions that gather random parts of the password.
 function getRandomLower() {
   return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
 }
@@ -61,33 +62,30 @@ var allFunctions = {
   special: getRandomSpecial
 }
 
-function getPasswordSection() {
-  return (getRandomNumber() + getRandomSpecial() + getRandomUpper() + getRandomLower());
-}
-console.log(getPasswordSection());
+// Function that takes one item from each function above and puts it into an array.
 
-for (var i = 0; i < 8; i++) getPasswordSection(i);
-console.log(getPasswordSection(i));
+// function getPasswordSection() {
+//   var completePassword = '';
+// for(i = 0; i < parseInt(promptLength);i++) {
+//   if (promptNumber) {
+//     completePassword += getRandomNumber
+//   }
+//   if (promptNumber) {
+//     completePassword += getRandomNumber
+//   }
+//   if (promptNumber) {
+//     completePassword += getRandomNumber
+//   }
+//   if (promptNumber) {
+//     completePassword += getRandomNumber
+// }
 
+//   return completePassword;
+// }
+// console.log(getPasswordSection());
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// for (var i = 0; i < 8; i++) getPasswordSection(i);
+// console.log(getPasswordSection(i));
 
 
 
