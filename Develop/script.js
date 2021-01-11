@@ -43,7 +43,7 @@ function getPasswordOptions() {
 
     //This is to prevent the user from requesting a password that does not have any criteria. 
     if (!promptNumber && !promptSpecialCharacters && !promptLowerCase && !promptUpperCase) {
-    alert("Please select at least one character type.");
+    alert("Please select at least one character.");
     return;
     };
 
@@ -55,9 +55,10 @@ function getPasswordOptions() {
         Lowercase: promptLowerCase,
         Uppercase: promptUpperCase
     };
-
     return passwordOptions;
 };
+
+getPasswordOptions();
 
 // Console.log used as a checkpoint to make sure the code works.
 console.log(passwordOptions.Length);
@@ -94,19 +95,18 @@ function generatePassword() {
   if (getPasswordOptions.Uppercase) {
     possibleCharacters = possibleCharacters.concat(getPasswordOptions.Uppercase);
     guaranteedCharacters.push(getRandom(getPasswordOptions.Uppercase))};
+
+  for (var i = 0; i < options.length; i++) {
+    var possibleCharacters = getrandom(possibleCharacters);
+
+    result.push(possibleCharacters);
+    }
+
+  for (var i = 0; i < guaranteedCharacters.length; i++) {
+    result[i] = guaranteedCharacters[i];
+    }
+};
     
-    return myPassword;
-  };
-// These for loops make the function above run the proper number of times so that enough characters of the correct type are assembled.
-for (var i = 0; i < options.length; i++) {
-  var possibleCharacters = getrandom(possibleCharacters);
-
-  result.push(possibleCharacters);
-}
-
-for (var i = 0; i < guaranteedCharacters.length; i++) {
-  result[i] = guaranteedCharacters[i];
-}
 // Most of this code was provided in the assignment. I am a little fuzzy on what some of it means, but essentially in makes it so that when the red "generate password" button is clicked, the new password is displayed.
 var generateBtn = document.querySelector('#generate');
 
