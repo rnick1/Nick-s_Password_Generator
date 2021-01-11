@@ -3,7 +3,7 @@
 *::after {
   box-sizing: border-box;
 }
-
+/* Body styles */
 html,
 body,
 .wrapper {
@@ -22,14 +22,14 @@ body {
   padding-left: 20px;
   padding-right: 20px;
 }
-
+/* Header styles */
 header {
   text-align: center;
   padding: 20px;
   padding-top: 0px;
   color: hsl(206, 17%, 28%);
 }
-
+/* Card styles. This is for the box where the completed password will appear. */
 .card {
   background-color: hsl(0, 0%, 100%);
   border-radius: 5px;
@@ -71,7 +71,7 @@ header {
   display: block;
   clear: both;
 }
-
+/* This styling is for the "Generate Password" button. */
 .btn {
   border: none;
   background-color: hsl(360, 91%, 36%);
@@ -96,7 +96,7 @@ button[disabled] {
 .float-right {
   float: right;
 }
-
+/* These styles will be used when a password is displayed. */
 #password {
   -webkit-appearance: none;
   -moz-appearance: none;
