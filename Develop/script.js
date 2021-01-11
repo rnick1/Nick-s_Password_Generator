@@ -58,6 +58,7 @@ function getPasswordOptions() {
     return passwordOptions;
 };
 
+// This variable is used to store the results from the getPasswordOptions function outside of the function.
 var passwordOptions = getPasswordOptions();
 
 // Console.log used as a checkpoint to make sure the code works.
@@ -66,6 +67,7 @@ console.log(passwordOptions.Numbers);
 console.log(passwordOptions.Special);
 console.log(passwordOptions.Lowercase);
 console.log(passwordOptions.Uppercase);
+
 // This is where the real work begins...this pulls a random character from one of the arrays.
 function getRandom(arr) {
   var randIndex = Math.floor(Math.random() * arr.length);
@@ -74,49 +76,60 @@ function getRandom(arr) {
   return randElement;
 };
 
+// This function starts with a few variables for storage. After this, the conditionals and iterations take the information gathered in the previous function and puts it into possible and guaranteedCharacters.
 function generatePassword() {
     var options = getPasswordOptions();
     var result = [];
     var possibleCharacters = [];
     var guaranteedCharacters = [];
 
-  if (getPasswordOptions.Numbers) {
-    possibleCharacters = possibleCharacters.concat(getPasswordOptions.Numbers);
-    guaranteedCharacters.push(getRandom(getPasswordOptions.Numbers))};
-
-  if (getPasswordOptions.Special) {
-    possibleCharacters = possibleCharacters.concat(getPasswordOptions.Special);
-    guaranteedCharacters.push(getRandom(getPasswordOptions.Special))};
-
-  if (getPasswordOptions.Lowercase) {
-    possibleCharacters = possibleCharacters.concat(getPasswordOptions.Lowercase);
-    guaranteedCharacters.push(getRandom(getPasswordOptions.Lowercase))};
-
-  if (getPasswordOptions.Uppercase) {
-    possibleCharacters = possibleCharacters.concat(getPasswordOptions.Uppercase);
-    guaranteedCharacters.push(getRandom(getPasswordOptions.Uppercase))};
-
-  for (var i = 0; i < options.length; i++) {
-    var possibleCharacters = getrandom(possibleCharacters);
-
-    result.push(possibleCharacters);
-    }
-
-  for (var i = 0; i < guaranteedCharacters.length; i++) {
-    result[i] = guaranteedCharacters[i];
-    }
-};
+    if (options.Numbers) {
+        possibleCharacters = possibleCharacters.concat(getPasswordOptions.Numbers);
+        guaranteedCharacters.push(getRandom(getPasswordOptions.Numbers))
+      };
+    
+      if (options.Special) {
+        possibleCharacters = possibleCharacters.concat(getPasswordOptions.Special);
+        guaranteedCharacters.push(getRandom(getPasswordOptions.Special))
+      };
+    
+      if (options.Lowercase) {
+        possibleCharacters = possibleCharacters.concat(getPasswordOptions.Lowercase);
+        guaranteedCharacters.push(getRandom(getPasswordOptions.Lowercase))
+      };
+    
+      if (options.Uppercase) {
+        possibleCharacters = possibleCharacters.concat(getPasswordOptions.Uppercase);
+        guaranteedCharacters.push(getRandom(getPasswordOptions.Uppercase))
+      };
+    
+      for (var i = 0; i < options.length; i++) {
+        var possibleCharacters = getrandom(possibleCharacters);
+    
+        result.push(possibleCharacters);
+        }
+    
+      for (var i = 0; i < guaranteedCharacters.length; i++) {
+        result[i] = guaranteedCharacters[i];
+        }
+    
+      return result.join('');
+    };
     
 // Most of this code was provided in the assignment. I am a little fuzzy on what some of it means, but essentially in makes it so that when the red "generate password" button is clicked, the new password is displayed.
 var generateBtn = document.querySelector('#generate');
 
-function writePassword(password) {
-  var password = myPassword;
+// This function makes the password.
+function writePassword() {
+  var password = generatePassword();
   var passwordText = document.querySelector('#password');
-  passwordText = myPassword;
-}
+
+  passwordText.value = password;
+};
 
 document.getElementById("generate").addEventListener("click", writePassword)
+
+
 // Here is a copy of the original code included with the assignment:
 
 // // // Assignment Code
