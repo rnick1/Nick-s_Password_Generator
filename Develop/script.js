@@ -14,51 +14,51 @@ var specialCharacters = ['@','%','+','\\','/',"'",'!','#','$','^','?',':',',','(
 // Welcome message.
 alert("Welcome to my Password Generator!");
 
-// Prompts user to specify a password length. "If" statements are to prevent the wrong kind of user input. 
-var passwordLength = parseInt(prompt("How many characters would you like your password to have? Note: your password must have 8-128 characters."));
-  console.log(passwordLength);
+function getPasswordOptions() {
 
-if(isNaN(passwordLength) === true) {
-  alert("Password length must be expressed as numeric characters.");
-  var passwordLength = parseInt(prompt("How many characters would you like your password to have? Note: your password must have 8-128 characters."));
-  console.log(passwordLength);
+    // Prompts user to specify a password length. "If" statements are to prevent the wrong kind of user input. 
+    var passwordLength = parseInt(prompt("How many characters would you like your password to have? Note: your password must have 8-128 characters."));
+    console.log(passwordLength);
+
+    if(isNaN(passwordLength) === true) {
+    alert("Password length must be expressed as numeric characters.");
+    return;
+    };
+
+    if (passwordLength < 8) {
+    alert("Password length must be between 8 and 129 characters.")
+    return;
+    };
+
+    if (passwordLength > 128) {
+    alert("Password length must be between 8 and 129 characters.")
+    return;
+    };
+
+    // Asks if user wants numbers, special characters, lowercase, and uppercase numbers in their password.
+    var promptNumber = confirm("Would you like to have Numbers in your password?");
+    var promptSpecialCharacters = confirm("Would you like to have Special Characters in your password?");
+    var promptLowerCase = confirm("Would you like to have Lower Case Letteres in your password?");
+    var promptUpperCase = confirm("Would you like to have Upper Case Letters in your password?");
+
+    //This is to prevent the user from requesting a password that does not have any criteria. 
+    if (!promptNumber && !promptSpecialCharacters && !promptLowerCase && !promptUpperCase) {
+    alert("Please select at least one character type.");
+    return;
+    };
+
+    // This object stores the user inputs.
+    var passwordOptions = {
+        Length: passwordLength,
+        Numbers: promptNumber,
+        Special: promptSpecialCharacters,
+        Lowercase: promptLowerCase,
+        Uppercase: promptUpperCase
+    };
+
+    return passwordOptions;
 };
 
-if (passwordLength < 8) {
-  alert("Password length must be between 8 and 129 characters.")
-  var passwordLength = parseInt(prompt("How many characters would you like your password to have? Note: your password must have 8-128 characters."));
-  console.log(passwordLength);
-};
-
-if (passwordLength > 128) {
-  alert("Password length must be between 8 and 129 characters.")
-  var passwordLength = parseInt(prompt("How many characters would you like your password to have? Note: your password must have 8-128 characters."));
-  console.log(passwordLength);
-};
-
-// Asks if user wants numbers, special characters, lowercase, and uppercase numbers in their password.
-  var promptNumber = confirm("Would you like to have Numbers in your password?");
-  var promptSpecialCharacters = confirm("Would you like to have Special Characters in your password?");
-  var promptLowerCase = confirm("Would you like to have Lower Case Letteres in your password?");
-  var promptUpperCase = confirm("Would you like to have Upper Case Letters in your password?");
-
- //This is to prevent the user from requesting a password that does not have any criteria. 
-if (!promptNumber && !promptSpecialCharacters && !promptLowerCase && !promptUpperCase) {
-  alert("Please select at least one character type.");
-  var promptNumber = confirm("Would you like to have Numbers in your password?");
-  var promptSpecialCharacters = confirm("Would you like to have Special Characters in your password?");
-  var promptLowerCase = confirm("Would you like to have Lower Case Letteres in your password?");
-  var promptUpperCase = confirm("Would you like to have Upper Case Letters in your password?");
-};
-
-// This object stores the user inputs.
-var passwordOptions = {
-  Length: passwordLength,
-  Numbers: promptNumber,
-  Special: promptSpecialCharacters,
-  Lowercase: promptLowerCase,
-  Uppercase: promptUpperCase
-};
 // Console.log used as a checkpoint to make sure the code works.
 console.log(passwordOptions.Length);
 console.log(passwordOptions.Numbers);
@@ -71,17 +71,14 @@ function getRandom(arr) {
   var randElement = arr[randIndex];
   
   return randElement;
-}
-// These variables are supposed to store the collections of characters that will make up the password.
-var options = getPasswordOptions;
-var result = [''];
-var possibleCharacters = [''];
-var guaranteedCharacters = [''];
-// This function is supposed to take the random characters taken from the arrays and concatenate them.
-var myPassword = [''];
+};
 
-function writePassword() {
-  var myPassword = [''];
+function generatePassword() {
+    var options = getPasswordOptions();
+    var result = [];
+    var possibleCharacters = [];
+    var guaranteedCharacters = [];
+
   if (getPasswordOptions.Numbers) {
     possibleCharacters = possibleCharacters.concat(getPasswordOptions.Numbers);
     guaranteedCharacters.push(getRandom(getPasswordOptions.Numbers))};
