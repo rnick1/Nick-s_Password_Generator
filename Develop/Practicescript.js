@@ -109,3 +109,70 @@ if (
     alert('Must select at least one character type');
     return;
 }
+// function getRandomLower() {
+//   return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+// }
+// console.log(getRandomLower());
+
+// function getRandomUpper() {
+//   return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+// }
+// console.log(getRandomUpper());
+
+// function getRandomNumber() {
+//   return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+// }
+// console.log(getRandomNumber());
+
+// function getRandomSpecial() {
+//   var special = ['@','%','+','\\','/',"'",'!','#','$','^','?',':',',','(',')','{','}','[',']','~','-','_','.',];
+//   return special [Math.floor(Math.random() * special.length)];
+// }
+// console.log(getRandomSpecial());
+
+// var allFunctions = {
+//   lower: getRandomLower,
+//   upper: getRandomUpper,
+//   number: getRandomNumber,
+//   special: getRandomSpecial
+// }
+
+// for(var i = 0; i < passwordLength; i++) {
+//     function getPasswordSection() {
+//       return (getRandomNumber() + getRandomSpecial() + getRandomUpper() + getRandomLower());
+//     };
+//     console.log(getPasswordSection());
+    
+//     console.log(i);
+//   };
+
+//   getPasswordSection();
+
+
+// function getPasswordSection() {
+//   var completePassword = '';
+// for(i = 0; i < parseInt(promptLength);i++) {
+//   if (promptNumber) {
+//     completePassword += getRandomNumber
+//   }
+//   if (promptNumber) {
+//     completePassword += getRandomNumber
+//   }
+//   if (promptNumber) {
+//     completePassword += getRandomNumber
+//   }
+//   if (promptNumber) {
+//     completePassword += getRandomNumber
+// }
+
+//   return completePassword;
+// }
+// console.log(getPasswordSection());
+
+// for (var i = 0; i < 8; i++) getPasswordSection(i);
+// console.log(getPasswordSection(i));
+
+
+
+
+
