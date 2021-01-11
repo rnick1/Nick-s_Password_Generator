@@ -78,24 +78,26 @@ var result = [''];
 var possibleCharacters = [''];
 var guaranteedCharacters = [''];
 
-function generatePassword() {
+function writePassword() {
+  var myPassword = [''];
+  if (getPasswordOptions.Numbers) {
+    possibleCharacters = possibleCharacters.concat(getPasswordOptions.Numbers);
+    guaranteedCharacters.push(getRandom(getPasswordOptions.Numbers))};
 
-if (getPasswordOptions.Numbers) {
-  possibleCharacters = possibleCharacters.concat(getPasswordOptions.Numbers);
-  guaranteedCharacters.push(getRandom(getPasswordOptions.Numbers))};
+  if (getPasswordOptions.Special) {
+    possibleCharacters = possibleCharacters.concat(getPasswordOptions.Special);
+    guaranteedCharacters.push(getRandom(getPasswordOptions.Special))};
 
-if (getPasswordOptions.Special) {
-  possibleCharacters = possibleCharacters.concat(getPasswordOptions.Special);
-  guaranteedCharacters.push(getRandom(getPasswordOptions.Special))};
+  if (getPasswordOptions.Lowercase) {
+    possibleCharacters = possibleCharacters.concat(getPasswordOptions.Lowercase);
+    guaranteedCharacters.push(getRandom(getPasswordOptions.Lowercase))};
 
-if (getPasswordOptions.Lowercase) {
-  possibleCharacters = possibleCharacters.concat(getPasswordOptions.Lowercase);
-  guaranteedCharacters.push(getRandom(getPasswordOptions.Lowercase))};
-
-if (getPasswordOptions.Uppercase) {
-  possibleCharacters = possibleCharacters.concat(getPasswordOptions.Uppercase);
-  guaranteedCharacters.push(getRandom(getPasswordOptions.Uppercase))};
-};
+  if (getPasswordOptions.Uppercase) {
+    possibleCharacters = possibleCharacters.concat(getPasswordOptions.Uppercase);
+    guaranteedCharacters.push(getRandom(getPasswordOptions.Uppercase))};
+    
+    return myPassword
+  };
 
 for (var i = 0; i < options.length; i++) {
   var possibleCharacters = getrandom(possibleCharacters);
@@ -110,13 +112,12 @@ for (var i = 0; i < guaranteedCharacters.length; i++) {
 var generateBtn = document.querySelector('#generate');
 
 function writePassword() {
-  var password = generatePassword();
+  var password = myPassword();
   var passwordText = document.querySelector('#password');
-  passwordText = password;
+  passwordText = myPassword;
 }
 
-document.getElementById("generate").addEventListener("click", password)
-
+document.getElementById("generate").addEventListener("click", writePassword)
 
 // // // Assignment Code
 // var generateBtn = document.querySelector("#generate");
