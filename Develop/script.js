@@ -58,13 +58,13 @@ function getPasswordOptions() {
     return passwordOptions;
 };
 
-getPasswordOptions();
+var passwordOptions = getPasswordOptions();
 
 // Console.log used as a checkpoint to make sure the code works.
 console.log(passwordOptions.Length);
 console.log(passwordOptions.Numbers);
 console.log(passwordOptions.Special);
-console.log(passwordOptionss.Lowercase);
+console.log(passwordOptions.Lowercase);
 console.log(passwordOptions.Uppercase);
 // This is where the real work begins...this pulls a random character from one of the arrays.
 function getRandom(arr) {
