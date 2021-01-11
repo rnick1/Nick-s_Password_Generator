@@ -1,3 +1,4 @@
+
 // This is the collection of variables that will are available for generating passwords.
 var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"
 ];
@@ -84,42 +85,43 @@ function generatePassword() {
     var guaranteedCharacters = [];
 
     if (options.Numbers) {
-        possibleCharacters = possibleCharacters.concat(getPasswordOptions.Numbers);
-        guaranteedCharacters.push(getRandom(getPasswordOptions.Numbers))
-      };
+        possibleCharacters = possibleCharacters.concat(numericCharacters);
+        guaranteedCharacters.push(getRandom(numericCharacters))
+    };
     
-      if (options.Special) {
-        possibleCharacters = possibleCharacters.concat(getPasswordOptions.Special);
-        guaranteedCharacters.push(getRandom(getPasswordOptions.Special))
-      };
+    if (options.Special) {
+        possibleCharacters = possibleCharacters.concat(specialCharacters);
+        guaranteedCharacters.push(getRandom(specialCharacters))
+    };
     
-      if (options.Lowercase) {
-        possibleCharacters = possibleCharacters.concat(getPasswordOptions.Lowercase);
-        guaranteedCharacters.push(getRandom(getPasswordOptions.Lowercase))
-      };
+    if (options.Lowercase) {
+        possibleCharacters = possibleCharacters.concat(lowerCase);
+        guaranteedCharacters.push(getRandom(lowerCase))
+    };
     
-      if (options.Uppercase) {
-        possibleCharacters = possibleCharacters.concat(getPasswordOptions.Uppercase);
-        guaranteedCharacters.push(getRandom(getPasswordOptions.Uppercase))
-      };
+    if (options.Uppercase) {
+        possibleCharacters = possibleCharacters.concat(upperCase);
+        guaranteedCharacters.push(getRandom(upperCase))
+    };
     
-      for (var i = 0; i < options.length; i++) {
+    for (var i = 0; i < options.length; i++) {
         var possibleCharacters = getrandom(possibleCharacters);
     
         result.push(possibleCharacters);
-        }
-    
-      for (var i = 0; i < guaranteedCharacters.length; i++) {
-        result[i] = guaranteedCharacters[i];
-        }
-    
-      return result.join('');
     };
+    
+    for (var i = 0; i < guaranteedCharacters.length; i++) {
+        result[i] = guaranteedCharacters[i];
+    };
+    
+    return result.join('');
+};
     
 // Most of this code was provided in the assignment. I am a little fuzzy on what some of it means, but essentially in makes it so that when the red "generate password" button is clicked, the new password is displayed.
 var generateBtn = document.querySelector('#generate');
 
 // This function makes the password.
+// I probably need to call this function?
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector('#password');
@@ -127,7 +129,7 @@ function writePassword() {
   passwordText.value = password;
 };
 
-document.getElementById("generate").addEventListener("click", writePassword)
+document.getElementById("generate").addEventListener("click", writePassword);
 
 
 // Here is a copy of the original code included with the assignment:
