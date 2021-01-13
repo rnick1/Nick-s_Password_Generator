@@ -107,10 +107,10 @@ function generatePassword() {
         guaranteedCharacters.push(getRandom(upperCase))
     };
     
-    for (var i = 0; i < options.Length; i++) {
-        var possibleCharacters = getRandom(possibleCharacters);
+    for (var i = 0; i < options.length; i++) {
+        var likelyCharacters = getRandom(likelyCharacters);
     
-        result.push(possibleCharacters);
+        result.push(likelyCharacters);
     };
     
     for (var i = 0; i < guaranteedCharacters.length; i++) {
