@@ -13,7 +13,7 @@ var specialCharacters = ['@','%','+','\\','/',"'",'!','#','$','^','?',':',',','(
 ];
 
 // Welcome message.
-alert("Welcome to my Password Generator!");
+// alert("Welcome to my Password Generator!");
 
 function getPasswordOptions() {
 
@@ -60,14 +60,16 @@ function getPasswordOptions() {
 };
 
 // This variable is used to store the results from the getPasswordOptions function outside of the function.
-var passwordOptions = getPasswordOptions();
+
+// var passwordOptions = getPasswordOptions();
 
 // Console.log used as a checkpoint to make sure the code works.
-console.log(passwordOptions.Length);
-console.log(passwordOptions.Numbers);
-console.log(passwordOptions.Special);
-console.log(passwordOptions.Lowercase);
-console.log(passwordOptions.Uppercase);
+
+// console.log(passwordOptions.Length);
+// console.log(passwordOptions.Numbers);
+// console.log(passwordOptions.Special);
+// console.log(passwordOptions.Lowercase);
+// console.log(passwordOptions.Uppercase);
 
 // This is where the real work begins...this pulls a random character from one of the arrays.
 function getRandom(arr) {
@@ -80,6 +82,7 @@ function getRandom(arr) {
 // This function starts with a few variables for storage. After this, the conditionals and iterations take the information gathered in the previous function and puts it into possible and guaranteedCharacters.
 function generatePassword() {
     var options = getPasswordOptions();
+    console.log(options);
     var result = [];
     var possibleCharacters = [];
     var guaranteedCharacters = [];
@@ -104,8 +107,8 @@ function generatePassword() {
         guaranteedCharacters.push(getRandom(upperCase))
     };
     
-    for (var i = 0; i < options.length; i++) {
-        var possibleCharacters = getrandom(possibleCharacters);
+    for (var i = 0; i < options.Length; i++) {
+        var possibleCharacters = getRandom(possibleCharacters);
     
         result.push(possibleCharacters);
     };
