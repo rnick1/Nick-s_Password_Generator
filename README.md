@@ -62,4 +62,4 @@
 
 ### Once again, this was a very fun assignment! I am not yet a pro with JavaScript, but after completing this assignment, I feel that I can accomplish almost anything with it!
 
-### This website is live! The URL is: 
+### This website is live! The URL is: https://rnick1.github.io/Nick-s_Password_Generator/.
