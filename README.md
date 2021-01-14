@@ -50,13 +50,7 @@
 
 ## Possible improvements:
 
--If I had more time, I would probably either eliminate some of the alerts that I used to confirm the user's password criteria as it is requested in order to reduce the number of clicks before the password is displayed and to simplify the code. If removing them isn't a good idea because of the assignment requirements, I could also find a way to put them all into a function of some kind.
-
-## Primary Lessons Learned:
-
--Carefully naming variables and functions can save a ton of confusion...I struggled with this at first, but after borrowing ideas from the instructor, TA's, LA's, students, and W3 Schools, I think I have a pretty good idea of naming from now on.
-
--Functions were and still are a challenge for me. Stepping back and looking at them as if they are separate components with different purposes help in understanding them, how they work, and how they contribute to the whole.
+-If I had more time, my preference is to eliminate some of the alerts that I used to confirm the user's password criteria to reduce the number of clicks before the password is displayed as well as simplify the code. If removing them isn't a good idea because of the assignment requirements, I could also find a way to put them all into a function of some kind.
 
 ### Note: No photos are included in this README. I did not change any styles so the webpage looks just like the assignment screenshot.
 
