@@ -31,10 +31,6 @@ function getPasswordOptions() {
             return;
         };
 
-        if(passwordLength) {
-            alert('Good! Your password will have ' + passwordLength + ' characters!')
-        };
-
     var promptNumber = confirm('Would you like to have numbers in your password?');
 
     var promptSpecialCharacters = confirm('Would you like to have special characters in your password?');

@@ -48,10 +48,6 @@
 
 -Finally another small function took the password rendered it on the webpage.
 
-## Possible improvements:
-
--If I had more time, my preference is to eliminate some of the alerts that I used to confirm the user's password criteria to reduce the number of clicks before the password is displayed as well as simplify the code. If removing them isn't a good idea because of the assignment requirements, I could also find a way to put them all into a function of some kind.
-
 ### Note: No photos are included in this README. I did not change any styles so the webpage looks just like the assignment screenshot.
 
 ### Once again, this was a very fun assignment! I am not yet a pro with JavaScript, but after completing this assignment, I feel that I can accomplish almost anything with it!
