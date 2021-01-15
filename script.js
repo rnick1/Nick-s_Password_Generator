@@ -37,43 +37,11 @@ function getPasswordOptions() {
 
     var promptNumber = confirm('Would you like to have numbers in your password?');
 
-        if(promptNumber) {
-            alert('Good! I will add numbers to your password!')
-        };
-
-        if(promptNumber === false) {
-            alert("I will not add numbers to your password.")
-        };
-
     var promptSpecialCharacters = confirm('Would you like to have special characters in your password?');
-
-        if(promptSpecialCharacters) {
-            alert('Good! I will add special characters to your password!')
-        };
-
-        if(promptSpecialCharacters === false) {
-            alert("I will not add special characters to your password.")
-        };
 
     var promptLowerCase = confirm('Would you like to have lowercase letters in your password?');
 
-        if(promptLowerCase) {
-            alert('Good! I will add lowercase letters to your password!')
-        };
-
-        if(promptLowerCase === false) {
-            alert("I will not add lowercase letters to your password.")
-        };
-
     var promptUpperCase = confirm('Would you like to have uppercase letters in your password?');
-
-        if(promptUpperCase) {
-            alert('Good! I will add uppercase letters to your password!')
-        };
-
-        if(promptUpperCase === false) {
-            alert("I will not add uppercase letters to your password.")
-        };
 
         if (!promptNumber && !promptSpecialCharacters && !promptLowerCase && !promptUpperCase) {
             alert('Please select at least one character.');
